@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        #name{
+        width: 40%;
+        margin-left: 20%;
+        padding:1%;
+        }
+        #btn{
+            color:white;
+            background-color: blue;
+            margin-left: 1%;
+            padding: 1%;
+        }
+         li{
+            list-style: none;
+            background-color: aqua;
+            width: 96%;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top:4%;
+            padding:1%; 
+         }
+         #box{
+            /* background-color: black; */
+            display: flex;
+            flex-direction: column; 
+         } 
+         input[type="button"]{
+            padding:2%;
+            font-size: large;
+            color: white;
+            background-color: green;
+            margin-left: 1%;
+         }
+        h2{
+            text-align: center;
+        }
+      
+     </style> 
+</head>
+<body>
+    <!-- <h1>To-Do List</h1>
+    <input id="taskInput" type="text" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul> -->
+    <h2>TO-DO-LIST</h2>
+    <form action="">
+        <input type="text" id="name">
+        <input type="submit" id="btn">
+    </form>
+    <ul id="box">
+        <!-- <li>practise coding</li> -->
+    </ul>
+     <script>
+var bt=document.getElementById("btn");
+bt.addEventListener("click",(e)=>{
+e.preventDefault();
+change();
+clear();
+
+})
+var box=document.getElementById("box");
+function change(){
+    var name=document.getElementById("name").value;
+    var span=document.createElement("span").innerHTML=name;
+    if(span===""){
+        alert("enter data");
+    }
+    else {
+    var btn=document.createElement("input");
+    btn.type="button";
+    btn.value="delete";
+    //  var span=document.createElement("span").innerHTML=name;
+
+     
+   
+    // var edit=document.createElement("input");
+    // edit.type="button";
+    // edit.value="edit";
+    var li=document.createElement("li");
+    li.append(span,btn);
+     
+    box.appendChild(li);
+btn.addEventListener("click",()=>{
+    li.remove();
+})
+// edit.addEventListener("click",()=>{
+//       document.getElementById("name").value=li[0].TextContent;
+
+// })
+
+}
+}
+function clear(){
+    document.getElementById("name").value="";
+}
+// function addTask() {
+//   const taskInput = document.getElementById("taskInput");
+//   const taskList = document.getElementById("taskList");
+
+//   if (taskInput.value === "") {
+//     alert("Please enter a task!");
+//     return;
+//   }
+//   var box=document.createElement("input");
+//   box.type="checkbox";
+//   const task = document.createElement("li");
+//   task.append((document.createTextNode(taskInput.value)),box);
+  
+//   taskList.appendChild(task);
+
+//   taskInput.value = "";
+
+//   // Add event listener to mark task as completed
+// //   task.addEventListener("click", function () {
+// //     this.classList.toggle("completed");
+// //   });
+
+//   // Add event listener to remove task
+//   box.addEventListener("dblclick", function () {
+//     task.remove();
+//   });
+// }
+
+     </script>
+</body>
+</html>
+ 
+ 
